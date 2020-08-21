@@ -1,18 +1,12 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About me
+permalink: /about-me/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Hi there! My name is Pantelis Vratsalis and I am a software engineer from Greece. I fell in love with computers and software in 1991 (wow! that's a loooong time).
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+I love coding and helping teams grow their skills. I'm a polyglot engineer (Java, Scala, Python, Ruby, Javascript, PHP), working with tried and tested tools and frameworks (Vertx, Ruby on Rails, Express, Flask, Laravel, ReactJS, Vue). I enjoy working with complex codebases and big data and I have experience using the right tools for the job (Kafka, Nomad, Consul, Kubernetes, Docker).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+I have managed tech teams (as Head of engineering or tech lead) and love mentoring people and grow with them, too. Having both a business and a technical background, I manage to bridge the communication gap between tech and business, which leads to great efficiency and results. 
 
-
-[jekyll-organization]: https://github.com/jekyll
