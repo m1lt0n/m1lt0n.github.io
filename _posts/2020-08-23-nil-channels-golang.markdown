@@ -4,11 +4,11 @@ title:  "How to use nil channels in Go ?"
 date:   2020-08-23 09:41:55 +0300
 categories: go channels
 ---
-Channels is an integral part of Go applications. They are typed conduits that allow communication between different parts of an application. Recently, I came across an interesting pattern which involves the use of nil channels. But what exactly is a nil channel? Simply a channel that has a value of nil. Nil channels have a few interesting behaviours:
+Channels is an integral part of Go applications. They are typed conduits that allow communication between different parts of an application. Recently, I came across an interesting pattern which involves the use of nil channels. But what exactly is a nil channel? Simply a channel that has been assigned a value of nil. Nil channels have a few interesting behaviours:
 
 * Sends to them block forever
 * Receives from them block forever
-* Closing them lead to panic
+* Closing them leads to panic
 
 Nevertheless, nil channels are useful in some contexts. Let's see a simple example:
 
