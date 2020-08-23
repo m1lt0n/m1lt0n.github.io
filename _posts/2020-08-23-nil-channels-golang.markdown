@@ -95,6 +95,6 @@ With the changes we made above, we are able to distinguish between legitimate ze
 
 As you can see, we set closed channels to nil. But this is not enough, we make the infinite for loop run conditionally if there are no nil channels, too. This leads to the expected behaviour: reading all messages from each channel and then normally terminating the program. If we had kept the for loop as an unconditional loop, we would end up with deadlock, since the receive from any of the nil channels would block for ever.
 
-Having said that, if all we want is to terminate the program after receiving all values from the channels, we could just have some boolean flag for each channel (e.g. isOpen) and have our for loop check: ```isChannel1Open && isChannel2Open```. But this would just solve one of the issues (terminating the program). The loop would continue to be a busy loop, as it would for ever receive from the closed channel(s).
+Having said that, if all we want is to terminate the program after receiving all values from the channels, we could just have some boolean flag for each channel (e.g. isOpen) and have our for loop check: ```isChannel1Open || isChannel2Open```. But this would just solve one of the issues (terminating the program). The loop would continue to be a busy loop, as it would for ever receive from the closed channel(s).
 
 That's all for now!
