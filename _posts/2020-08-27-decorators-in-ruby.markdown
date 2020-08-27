@@ -53,7 +53,7 @@ end
 
 This approach would work and we can even add it to other classes or remove it from the ```User``` class in the future, if need be. Nevertheless, the functionality is added once again to all objects of the ```User``` class.
 
-Here is where the decorator patterns comes in handy. Simply put, decorator is a class that extends the functionality of an object dynamically. Let's see a simple implementation of a decorator:
+Here is where the decorator pattern comes in handy. Simply put, decorator is a class that extends the functionality of an object dynamically. Let's see a simple implementation of a decorator:
 
 {% highlight ruby %}
 class UserDecorator
