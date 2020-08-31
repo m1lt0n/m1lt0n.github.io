@@ -25,12 +25,9 @@ github_username:  m1lt0n
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-dinky
 plugins:
   - jekyll-feed
-
-minima:
-  skin: dark
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
