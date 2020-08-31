@@ -40,7 +40,7 @@ func  ValidateMx(email string) bool {
   emailParts := strings.Split(email, "@")
   mxRecords, err := net.LookupMX(emailParts[len(emailParts) - 1])
 
-  return err != nil && len(mxRecords) > 0
+  return err == nil && len(mxRecords) > 0
 }
 
 func main() {
