@@ -44,13 +44,13 @@ func  ValidateMx(email string) bool {
 }
 
 func main() {
-  fmt.Println(ValidateFormat("pvratsalis@example.com"))
-  fmt.Println(ValidateMx("pvratsalis@example.com"))
+  fmt.Println(ValidateFormat("pvratsalis@this-is-invalid-email-by-m1lt0n.com"))
+  fmt.Println(ValidateMx("pvratsalis@this-is-invalid-email-by-m1lt0.com"))
 }
 {% endhighlight %}
 
 Let's go through the code. First, I compile (only once) the regular expression for a valid email (based on RFC 5322). Then, I have 2 functions that validate an email address. The first (```ValidateFormat```) just checks the validity of the email based on the regular expression. The second (```ValidateMx```), first checks that the format is valid and then performs a lookup for MX records for the domain of the email. If there is an error, or there are no MX records, the email is reported as invalid. This is by no means a bulletproof approach, but for my current needs it is sufficient.
 
-As you can see in the main function, the ```ValidateFormat``` function reports the @example.com email address as valid, while the ```ValidateMx``` function does not. Try it out with your email!
+As you can see in the main function, the ```ValidateFormat``` function reports the @this-is-invalid-email-by-m1lt0n.com email address as valid, while the ```ValidateMx``` function does not. Try it out with your email!
 
 That's all for now!
