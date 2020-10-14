@@ -14,12 +14,12 @@ Let's now focus on our topic: log compaction. Apart from the retention period th
 
 Let's assume we have produced a few messages in a topic, like below:
 
-<image src="{{site.baseurl}}/assets/images/kafka_log_before_compaction.png" alt="Kafka log before compaction" />
+<img src="{{site.baseurl}}/assets/images/kafka_log_before_compaction.png" alt="Kafka log before compaction" />
 <br>
 
 After the compaction, we will end up with these messages:
 
-<image src="{{site.baseurl}}/assets/images/kafka_log_after_compaction.png" alt="Kafka log after compaction" />
+<img src="{{site.baseurl}}/assets/images/kafka_log_after_compaction.png" alt="Kafka log after compaction" />
 
 <br>
 
