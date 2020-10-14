@@ -20,13 +20,11 @@ Let's see a circuit breaker implementation in go below and we explain how it wor
 package main
 
 import (
-	"io/ioutil"
+	"errors"
 	"log"
 	"net/http"
 	"time"
 )
-
-type response string
 
 type state string
 
@@ -50,20 +48,17 @@ func New(threshold int, timeout time.Duration) *CircuitBreaker {
 func (cb *CircuitBreaker) open() {
 	cb.state = open
 	go func() {
-		time.Sleep(cb.timeout * time.Second)
+		time.Sleep(cb.timeout)
 		cb.state = halfOpen
 
 		log.Println("Fails:", cb.fails, "State:", cb.state)
 	}()
 }
 
-func (cb *CircuitBreaker) Perform(action func() (response, error), fallback func() (response, error)) (response, error) {
-	var data response
-	var err error
-
+func (cb *CircuitBreaker) Perform(action func() error) (err error) {
 	switch cb.state {
 	case closed:
-		data, err = action()
+		err = action()
 		if err != nil {
 			cb.fails++
 		}
@@ -71,9 +66,9 @@ func (cb *CircuitBreaker) Perform(action func() (response, error), fallback func
 			cb.open()
 		}
 	case open:
-		data, err = fallback()
+		err = errors.New("Failed response without calling service")
 	case halfOpen:
-		data, err = action()
+		err := action()
 		if err != nil {
 			cb.open()
 		} else {
@@ -83,7 +78,7 @@ func (cb *CircuitBreaker) Perform(action func() (response, error), fallback func
 	}
 
 	log.Println("Fails:", cb.fails, "State:", cb.state)
-	return data, err
+	return
 }
 
 func main() {
@@ -91,45 +86,26 @@ func main() {
 
 	for {
 		time.Sleep(1 * time.Second)
-
-		data, err := cb.Perform(func() (response, error) {
-			return callService()
-		}, func() (response, error) {
-			log.Println("Service is down. Fallback response...")
-			return "fallback_response", nil
-		})
-
-		if err != nil {
-			log.Println("Request failed...")
-		} else {
-			log.Printf("Received data: %s\n", data)
-		}
-
+		cb.Perform(callService)
 	}
 }
 
-func callService() (response, error) {
+func callService() error {
 	log.Println("Calling service...")
-	resp, err := http.Get("http://localhost:8000")
+	_, err := http.Get("http://localhost:8000")
 
-	if err != nil {
-		return "", err
-	}
-
-	body, _ := ioutil.ReadAll(resp.Body)
-
-	return response(body), nil
+	return err
 }
 {% endhighlight %}
 
-First of all, in **lines 12-18** we define the states of the circuit breaker. When the circuit breaker is closed, everything works great and we get the response from the external service we want to call. When the circuit breaker is open, the external service is down and we return the fallback response. When the circuit breaker is half open, the failed attempts to the service have just been reset to zero. If the next attempt is a failure, the circuit breaker goes back to an open state for some more time (the time out period we described above).
+First of all, in **lines 10-16** we define the states of the circuit breaker. When the circuit breaker is closed, everything works great and we get the response from the external service we want to call. When the circuit breaker is open, the external service is down and we return an error. When the circuit breaker is half open, the failed attempts to the service have just been reset to zero. If the next attempt is a failure, the circuit breaker goes back to an open state for some more time (the time out period we described above).
 
 Then, we define the ```CircuitBreaker``` struct. Its main attributes is the failures threshold (after how many failed API calls should the circuit breaker trip) and the timeout period (for how long should the circuit breaker be in an open state).
 
-The main method of ```CircuitBreaker``` is ```Perform``` in **lines 41-68**. This method accepts the actual service call function, in order to wrap it and a fallback function that is called when the service call fails. Based on the state of the ```CircuitBreaker```:
+The main method of ```CircuitBreaker``` is ```Perform``` in **lines 39-63**. This method accepts the actual service call function. Based on the state of the ```CircuitBreaker```:
 
 * when the state is closed (the default when we create the circuit breaker), we call the service call function and if there was an error, we increment the counter of failed attempts. If the failed attempts have reached the failures threshold, we switch the state of the circuit breaker to open and run a goroutine to switch the state to half open after the time out period
-* when the state is open, we just return the result of the fallback function
+* when the state is open, we just return an error
 * when the state is half open, we run the service call and, if it fails, we switch the circuit breaker to the open state, otherwise we reset it to the closed state and we reset the failed attempts counter
 
 **Note**: The implementation in the example is not thread safe
@@ -142,7 +118,7 @@ Here is an example with the service down:
 
 <img src="{{site.baseurl}}/assets/images/circuit_breaker_down.png" alt="Circuit breaker with service down" width="100%" />
 
-As seen in the logs, the service calls fails the first 3 times and the circuit breaker trips. Then, for another 5 seconds (that the state of the circuit breaker is open), the fallback response is returned and the service is not called at all. After that, the circuit breaker switches to half open state and tries to make a call one more time. Since it fails, the circuit breaker returns to an open state for another 5 seconds.
+As seen in the logs, the service calls fails the first 3 times and the circuit breaker trips. Then, for another 5 seconds (that the state of the circuit breaker is open), the service is not called at all, as the circuit breaker returns an error without trying the service call. After that, the circuit breaker switches to half open state and tries to make a call one more time. Since it fails, the circuit breaker returns to an open state for another 5 seconds.
 
 And an example with the service up:
 
