@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Memoization in python"
-date:   2020-11-30 10:00:00 +0300
+date:   2020-12-06 10:00:00 +0300
 categories: memoization python
 ---
 Memoization is loosely defined as an optimization technique that is usually applied on functions that are quite expensive to run.
