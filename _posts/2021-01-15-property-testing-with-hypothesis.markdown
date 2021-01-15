@@ -9,7 +9,7 @@ Testing is a huge field and takes a significant amount of time to master. There 
 There is an interesting concept of the testing pyramid which helps with understanding the need for different kinds of tests, as well as their benefits. Check out these posts for more information:
 
 * <a href="https://www.testim.io/blog/test-automation-pyramid-a-simple-strategy-for-your-tests/" target="_blank" rel="nofollow noopener">Test Automation Pyramid: A Simple Strategy for Your Tests</a>
-* <a href="https://martinfowler.com/bliki/TestPyramid.html" rel="nofollow noopener">Test Pyramid by Martin Fowler</a>
+* <a href="https://martinfowler.com/bliki/TestPyramid.html" target="_blank" rel="nofollow noopener">Test Pyramid by Martin Fowler</a>
 
 In the context of unit tests (mainly), property based testing is a technique for building tests in a way that when these tests are fuzzed, issues of the code can be identified (e.g. edge cases not taken into account).
 
