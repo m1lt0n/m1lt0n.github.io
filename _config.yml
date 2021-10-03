@@ -90,7 +90,7 @@ analytics:
 # Site Author
 author:
   name             : "Pantelis Vratsalis"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/profile.jpeg"
   bio              : "Hello! I'm Pantelis. I'm an engineering team lead at Hotjar. On this blog you will find posts about programming languages, tools and frameworks, tips and links to awesome content on the web."
   location         : "Greece"
   email            : "pvratsalis@gmail.com"
