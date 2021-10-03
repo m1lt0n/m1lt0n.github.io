@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Encryption the easy way with lockbox gem"
 date:   2020-10-24 13:00:00 +0300
 categories: encryption ruby

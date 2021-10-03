@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Awesome cli tools: jq json processor"
 date:   2020-08-30 09:00:00 +0300
 categories: tools jq json

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Functional programming with Javascript"
 date:   2020-10-30 13:00:00 +0300
 categories: javascript functional theory

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Send logs to logz.io from your Flask application"
 date:   2021-01-31 09:00:00 +0300
 categories: python flask logzio logs

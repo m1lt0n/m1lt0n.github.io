@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Property testing with hypothesis"
 date:   2021-01-15 08:00:00 +0300
 categories: testing python

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Implementing a circuit breaker in go"
 date:   2020-10-14 09:00:00 +0300
 categories: patterns go

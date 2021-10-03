@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Parsing a mini query language with python and pyparsing"
 date:   2020-11-08 13:00:00 +0300
 categories: python parsing pyparsing

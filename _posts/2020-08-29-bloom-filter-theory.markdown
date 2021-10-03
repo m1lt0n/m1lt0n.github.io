@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Data structures: Bloom filter"
 date:   2020-08-29 08:00:00 +0300
 categories: theory data structures

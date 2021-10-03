@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "How to time out requests in your go API"
 date:   2020-08-28 10:00:00 +0300
 categories: go http timeout

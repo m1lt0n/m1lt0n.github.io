@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Memoization in python"
 date:   2020-12-06 10:00:00 +0300
 categories: memoization python

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Awesome cli tools: HTTPie http client"
 date:   2021-02-17 09:00:00 +0300
 categories: cli httpie

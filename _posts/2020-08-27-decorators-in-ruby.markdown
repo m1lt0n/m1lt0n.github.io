@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "How to work with decorators in ruby"
 date:   2020-08-27 09:00:00 +0300
 categories: ruby decorators

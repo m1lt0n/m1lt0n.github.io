@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Implementing a bit array in go"
 date:   2020-09-13 11:00:00 +0300
 categories: bitset bit-array go

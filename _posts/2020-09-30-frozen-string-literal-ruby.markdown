@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Reducing memory consumption in ruby with frozen strings"
 date:   2020-09-30 09:00:00 +0300
 categories: ruby memory string

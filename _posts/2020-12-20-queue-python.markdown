@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Queues in python"
 date:   2020-12-20 09:00:00 +0300
 categories: queues data python

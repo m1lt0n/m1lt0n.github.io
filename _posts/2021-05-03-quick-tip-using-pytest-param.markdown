@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Quick tip: Easily identify failing parametrized test in pytest with pytest.param"
 date:   2021-05-03 08:00:00 +0300
 categories: python pytest parametrize

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Dependency injection in python"
 date:   2020-12-31 10:00:00 +0300
 categories: dependency-injection python

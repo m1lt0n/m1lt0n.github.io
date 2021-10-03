@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Distributed tracing with Zipkin"
 date:   2020-09-01 09:00:00 +0300
 categories: tracing microservices distributed

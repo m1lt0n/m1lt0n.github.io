@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Embedded and promoted fields in go structs"
 date:   2020-08-25 09:00:00 +0300
 categories: go structs

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Validating an email in go"
 date:   2020-08-31 10:00:00 +0300
 categories: go email validation

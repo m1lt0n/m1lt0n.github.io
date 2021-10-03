@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Quick tip: Generating unique IDs in python"
 date:   2020-11-18 10:00:00 +0300
 categories: python uuid

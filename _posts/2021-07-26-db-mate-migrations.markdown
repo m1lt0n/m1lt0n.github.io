@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Database migrations with Dbmate"
 date:   2021-07-26 08:00:00 +0300
 categories: migrations database sql

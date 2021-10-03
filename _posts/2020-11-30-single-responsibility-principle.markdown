@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "SOLID principles: Single responsibility"
 date:   2020-11-30 09:00:00 +0300
 categories: solid theory principles

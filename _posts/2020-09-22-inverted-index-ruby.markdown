@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Searching with an inverted index in Ruby"
 date:   2020-09-22 08:00:00 +0300
 categories: ruby search index

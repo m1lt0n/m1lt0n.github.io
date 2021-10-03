@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "How to use nil channels in Go ?"
 date:   2020-08-23 09:41:55 +0300
 categories: go channels

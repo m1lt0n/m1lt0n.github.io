@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Load test your API with vegeta"
 date:   2020-09-17 10:00:00 +0300
 categories: vegeta go benchmarking

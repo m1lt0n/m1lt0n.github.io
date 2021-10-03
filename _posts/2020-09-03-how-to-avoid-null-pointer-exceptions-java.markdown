@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Quick tip: Avoiding null pointer exceptions in Java"
 date:   2020-09-03 17:00:00 +0300
 categories: java exceptions tips

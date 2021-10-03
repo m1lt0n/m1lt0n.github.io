@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title:  "Mocking in python with autospec"
 date:   2021-04-01 08:00:00 +0300
 categories: python unittest mock autospec
