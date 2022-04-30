@@ -7,6 +7,7 @@ gem "jekyll-include-cache", group: :jekyll_plugins
 gem "minima", "~> 2.0"
 
 gem "minimal-mistakes-jekyll"
+gem 'webrick'
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
