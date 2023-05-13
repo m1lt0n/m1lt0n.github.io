@@ -21,7 +21,7 @@ Let's assume we want to test this piece of code:
 
 {% highlight python %}
 def how_many_times(x, length):
-  return size // length(x)
+  return length // len(x)
 {% endhighlight %}
 
 Super simple function. Given a string and an integer (the length), we want to see how many times the whole string can fit in this length.
