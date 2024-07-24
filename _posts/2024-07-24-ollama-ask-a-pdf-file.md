@@ -14,7 +14,7 @@ As a way to learn about the tooling and concepts related to the topic, I like to
 The tools I used for building the PoC are:
 
 1. <a href="https://www.langchain.com/" target="_blank" rel="noopener nofollow">LangChain</a> - a framework that allows you to build LLM applications. The framework provides an interface for interacting with various LLMs, is quite popular and well-documented and has lots of examples on how to use it.
-2. <a href="https://ollama.com/" target="_blank" rel="noopener nofollow">Ollama</a>, a toool that allows you to run LLMs locally. There's a list of LLMs available in the Ollama website.
+2. <a href="https://ollama.com/" target="_blank" rel="noopener nofollow">Ollama</a>, a tool that allows you to run LLMs locally. There's a list of LLMs available in the Ollama website.
 
 At a very high level, LLMs are pretrained models on huge amounts of data and can be fine-tuned to specialise for specific tasks (eg programming). While some models (eg gpt4) are very powerful and can be valuable out of the box, there are some cases where they may lack context for answering questions, eg because the PDF document (in our case) we want to ask questions about was not part of the training data of the model.
 
