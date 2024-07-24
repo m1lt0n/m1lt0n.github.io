@@ -73,13 +73,13 @@ def format_docs(docs):
 
 # 4. Build the chain of operations
 chain = (
-{
-  'context': retriever | format_docs,
-  'question': RunnablePassthrough(),
-}
-| prompt
-| llm
-| StrOutputParser()
+  {
+    'context': retriever | format_docs,
+    'question': RunnablePassthrough(),
+  }
+  | prompt
+  | llm
+  | StrOutputParser()
 )
 
 # 5. Start asking questions and getting answers in a loop
