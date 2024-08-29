@@ -20,11 +20,16 @@ class Hash:
         # Find the bucket where the key/value pair will be stored
         bucket = hash(key) % self._buckets
 
+	for pair in self._data[bucket]:
+	    if pair[0] == key:
+		pair[1] = val
+		return	
+			
         # If the bucket is already full, rehash the table first and then store it
         if len(self._data[bucket]) == self._bucket_capacity:
             self._buckets *= 2
             self._rehash()
-        self._data[bucket].append((key, val))
+        self._data[bucket].append([key, val])
 
     def get(self, key):
         # Find the bucket where the key/value pair lives and search for it in the bucket
@@ -41,7 +46,7 @@ class Hash:
         for bucket in self._data:
             for k, v in bucket:
                 bucket = hash(k) % self._buckets
-                new_data[bucket].append((k, v))
+                new_data[bucket].append([k, v])
         self._data = new_data
 {% endhighlight %}
 
