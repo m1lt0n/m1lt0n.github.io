@@ -1,10 +1,14 @@
-FROM jekyll/jekyll
+FROM ruby:3.4.7
 
 EXPOSE 4000
 
+ENV BUNDLE_FROZEN=true
 WORKDIR /srv/jekyll
 
-COPY ./Gemfile* ./
+RUN gem install bundler -v 2.6.9
+RUN gem install jekyll
+
+COPY Gemfile* .
 
 RUN bundle install
 
