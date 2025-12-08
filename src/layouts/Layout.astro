@@ -1,12 +1,12 @@
 ---
-import '~/styles/global.css'
-import Header from '~/components/Header.astro'
+import crypto from 'crypto'
 import Footer from '~/components/Footer.astro'
+import Header from '~/components/Header.astro'
 import LightDarkAutoThemeLoader from '~/components/LightDarkAutoThemeLoader.astro'
 import SelectThemeLoader from '~/components/SelectThemeLoader.astro'
 import siteConfig from '~/site.config'
+import '~/styles/global.css'
 import { pick, resolveThemeColorStyles } from '~/utils'
-import crypto from 'crypto'
 
 interface Props {
   title?: string
@@ -141,7 +141,6 @@ let generatedCss: string = cssLines.join('\n')
     <meta name="keywords" content={pageKeywords} />
     <link rel="canonical" href={pageUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link
       rel="alternate"
       type="application/rss+xml"
