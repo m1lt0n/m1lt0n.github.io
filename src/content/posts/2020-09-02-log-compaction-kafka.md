@@ -101,10 +101,13 @@ When we created the topic, we passed some configuration to it. Let's see what ar
 | max.compaction.lag.ms     | Sets the maximum time a message is ineligible for compaction. Applies only for logs that are being compacted. This option is available since Kafka version 2.3.0                                                                                                           |
 | segment.ms                | Controls the period of time after which Kafka will force the log to create a new segment file even if the segment is not full (based on the segment bytes option), to ensure compaction or deletion based on retention can run                                             |
 
-A couple of important notes:
+:::note
+Compaction does not run on the active segment (the one that messages are currently written into), but only old segments. This is why we set the segment.ms option in our topic. Since we sent a very small amount of messages, compaction would never kick in in our case, because all messages would be in the active segment.
+:::
 
-- compaction does not run on the active segment (the one that messages are currently written into), but only old segments. This is why we set the segment.ms option in our topic. Since we sent a very small amount of messages, compaction would never kick in in our case, because all messages would be in the active segment.
-- we can also delete messages by sending "tombstone" messages, that are messages with null value. The option delete.retention.ms defines how long the delete markers (tombstone) messages are retained for. You can try sending tombstone messages and see what happens :)
+:::note
+We can also delete messages by sending "tombstone" messages, that are messages with null value. The option delete.retention.ms defines how long the delete markers (tombstone) messages are retained for. You can try sending tombstone messages and see what happens :)
+:::
 
 We have only scratched the surface of Kafka, which is a huge topic with books written about it. I will probably follow up with other posts on Kafka in the future. Kafka is awesome!
 

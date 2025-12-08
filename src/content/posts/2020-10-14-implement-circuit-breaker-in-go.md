@@ -108,7 +108,9 @@ The main method of `CircuitBreaker` is `Perform` in **lines 39-63**. This method
 - when the state is open, we just return an error
 - when the state is half open, we run the service call and, if it fails, we switch the circuit breaker to the open state, otherwise we reset it to the closed state and we reset the failed attempts counter
 
-**Note**: The implementation in the example is not thread safe
+:::note
+The implementation in the example is not thread safe
+:::
 
 That's pretty much it! The main function then calls (in an inifinite loop) the service every 1 second and uses the circuit breaker. In the example, the service call is a call to http://localhost:8000. You can test out this example code by starting a server with `python3 -m http.server` or `python -m SimpleHTTPServer` (for python 2), which creates a server listening on port 8000.
 

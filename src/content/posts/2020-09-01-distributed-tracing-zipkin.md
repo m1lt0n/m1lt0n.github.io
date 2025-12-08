@@ -120,7 +120,9 @@ Finally, let's head over to the dependencies page from the navigation of the UI.
 
 ![Zipkin dependencies page](./zipkin_dependency_graph.png)
 
-One very important note: In our examples, we used HTTP as the transport for the traces collection, but there are several transports that Zipkin can use, like Kafka, queues etc! How cool is that?
+:::important
+In our examples, we used HTTP as the transport for the traces collection, but there are several transports that Zipkin can use, like Kafka, queues etc! How cool is that?
+:::
 
 This was a short intro to distributed tracing with Zipkin. Hope you enjoyed it!
 

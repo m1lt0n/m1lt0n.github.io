@@ -121,6 +121,8 @@ func main() {
 
 Context allows you to manually cancel or set a timeout and you are notified via the `ctx.Done()` channel, which is what we've done here. Not much different than the previous approach, but I'm putting it there in case you prefer doing it this way. We will dedicate a whole new post about context in the future.
 
-**Note**: you should be aware that both the `http.TimeoutHandler` and our custom approach do not terminate the http handler's goroutine (the original handler), they just respond to the client.
+:::note
+You should be aware that both the `http.TimeoutHandler` and our custom approach do not terminate the http handler's goroutine (the original handler), they just respond to the client.
+:::
 
 That's all for now!

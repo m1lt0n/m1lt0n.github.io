@@ -8,7 +8,11 @@ As lots of engineers nowadays, about a year ago I decided to start diving deeper
 
 In this post, I won't be going into detail on how LLMs work or what AI is, but I'll just scratch the surface of an interesting topic: RAG (which stands for Retrieval-Augmented Generation). It's an approach where you combine LLMs with traditional search engines to create more powerful AI systems.
 
-As a way to learn about the tooling and concepts related to the topic, I like to build small projects/PoCs that can help me understand these technologies better. One of those projects was creating a simple script for chatting with a PDF file. The script is a very simple version of an AI assistant that reads from a PDF file and answers questions based on its content. Note: this is in no way a production-ready solution, but just a simple script you can use either for learning purposes, or for getting some decent answer back from your PDF files.
+As a way to learn about the tooling and concepts related to the topic, I like to build small projects/PoCs that can help me understand these technologies better. One of those projects was creating a simple script for chatting with a PDF file. The script is a very simple version of an AI assistant that reads from a PDF file and answers questions based on its content.
+
+:::note
+This is in no way a production-ready solution, but just a simple script you can use either for learning purposes, or for getting some decent answer back from your PDF files.
+:::
 
 The tools I used for building the PoC are:
 

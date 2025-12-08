@@ -12,7 +12,9 @@ Since jq needs works with JSON, we need a JSON file to work with. For the purpos
 
 `curl https://api.github.com/repos/ruby/ruby/commits?per_page=10 > commits.json`
 
-**Note:** If you don't have `curl` available in your system, you can just head over to a browser and save the contents of the page directly from there.
+:::note
+If you don't have `curl` available in your system, you can just head over to a browser and save the contents of the page directly from there.
+:::
 
 In order to see jq in action, we can pipe the content of commits.json to the jq command. The simplest jq command is `jq .`, which does no filtering and returns the whole input back, just formatted:
 

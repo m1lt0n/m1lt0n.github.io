@@ -22,7 +22,9 @@ class MyQueue:
         return self.items.pop(0)
 ```
 
-**Note**: the implementation above is not thread safe.
+:::note
+The implementation above is not thread safe.
+:::
 
 `MyQueue` internally uses a list to store the data of the queue. When we enqueue an item, we append it to the end of the list and when we dequeue and item, we remove it from the start of the list.
 

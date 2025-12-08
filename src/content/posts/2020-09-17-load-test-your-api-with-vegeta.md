@@ -119,7 +119,9 @@ Now, open plot.html with a browser and you will get a plot like that:
 
 ![Vegeta plot](./vegeta-plot.png)
 
-**Note**: the actual results and plot might be different on your computer.
+:::note
+The actual results and plot might be different on your computer.
+:::
 
 Vegeta is awesome. I use it very frequently. It is easy to use and draw conclusions from its reports. Also, apart from using it as a cli tool, it can bee used as a library within your go code. Go ahead to <a href="https://github.com/tsenart/vegeta" target="_blank" rel="noopener nofollow">vegeta github page</a> to find out more.
 
