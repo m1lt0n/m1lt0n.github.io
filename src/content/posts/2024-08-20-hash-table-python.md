@@ -19,10 +19,10 @@ class Hash:
         # Find the bucket where the key/value pair will be stored
         bucket = hash(key) % self._buckets
 
-	for pair in self._data[bucket]:
-	    if pair[0] == key:
-		pair[1] = val
-		return
+        for pair in self._data[bucket]:
+            if pair[0] == key:
+                pair[1] = val
+                return
 
         # If the bucket is already full, rehash the table first and then store it
         if len(self._data[bucket]) == self._bucket_capacity:
